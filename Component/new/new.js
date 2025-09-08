@@ -1,16 +1,17 @@
 "use client";
 
 import { useState } from 'react';
-import './Contact.css'; 
+import './new.css'; 
+import Link from 'next/link';
 
-export default function Contact() {
+export default function New() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    password: "",
-    confirmpassword: "",
-    
+    course: "",
+    dob: "",
+    address: "",
   });
 
   function handleChange(e) {
@@ -27,16 +28,16 @@ export default function Contact() {
       {/* Navbar */}
       <header className="header">
         <nav className="navbar">
-          <a className="Logo" href="/">Website</a>
+          <a className="Logo" href="/">EduTech</a>
           <ul className="navmenu">
             <li className="navitem">
-              <a className="navlink" href="Login">Login</a>
+             <Link href="/home" className="navlink">Home</Link>
             </li>
             <li className="navitem">
-              <a className="navlink" href="Register">Register</a>
+             <Link href="/about" className="navlink">About</Link>
             </li>
             <li className="navitem">
-              <a className="navlink" href="Contact">Contact</a>
+             <Link href="/contact" className="navlink">Contact</Link>
             </li>
           </ul>
           <button className="hamburger">
@@ -56,11 +57,17 @@ export default function Contact() {
         <form onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Full Name" onChange={handleChange} required />
           <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-          <input type="Number" name="phone" placeholder="Phone" onChange={handleChange} required />
-          <input type="password" name="Password"  placeholder="password" onChange={handleChange} required />
-          <input type="password" name="confirmPassword"  placeholder="password" onChange={handleChange} required />
+          <input type="tel" name="phone" placeholder="Phone" onChange={handleChange} required />
+          <input type="date" name="dob" onChange={handleChange} required />
 
-         
+          <select name="course" onChange={handleChange} required>
+            <option value="">Select Course</option>
+            <option value="BCA">BCA</option>
+            <option value="B.Sc">B.Sc</option>
+            <option value="MCA">MCA</option>
+          </select>
+
+          <textarea name="address" placeholder="Address" onChange={handleChange} required />
           <button type="submit">Submit</button>
         </form>
       </div>

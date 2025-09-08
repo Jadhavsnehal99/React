@@ -1,10 +1,10 @@
 import React from 'react';
-import Contact from '@/Component/contact/Contact';
+import New from '@/Component/new/new';  // Check folder name case here!
 
 export default function Page() {
   return (
     <div>
-      <Contact />
+      <New />
     </div>
   );
 }

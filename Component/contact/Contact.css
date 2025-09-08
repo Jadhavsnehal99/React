@@ -1,0 +1,108 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Navbar styles */
+.header {
+  width: 100%;
+  background-color: #333;
+  padding: 15px 30px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Logo {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navmenu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navitem .navlink {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navitem .navlink:hover {
+  text-decoration: underline;
+}
+
+.hamburger {
+  display: none; /* Hide unless needed for mobile */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 4px;
+  background-color: white;
+}
+
+/* Main layout styles */
+.main-container {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f0f0f0;
+  min-height: calc(100vh - 70px); /* adjust height to account for navbar */
+}
+
+/* Your existing container/form styles */
+.container {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+select,
+textarea,
+button {
+  margin: 8px 0;
+  padding: 8px;
+  font-size: 14px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
