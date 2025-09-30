@@ -1,19 +1,34 @@
-import Image from  "next/image";
-import Link from  "next/link";
+"use client";
+
+import { useEffect } from "react";
+import Link from "next/link";
+// import Header from "@/components/Header"; // Uncomment if you want to use it
 
 export default function Home() {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetch("/api/test");
+        const response = await data.json(); // ✅ await this
+        console.log("Fetched data:", response);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div>
       <main>
-      
-       <Link href="/contact">Contact</Link>
+        {/* <Header /> */}
+         <Link href="/contact">Contact</Link>
         <Link href="/register">Register</Link>
          <Link href="/login">Login</Link>
          <Link href="/order">Order</Link>
          <Link href="/about">About</Link>
-         
       </main>
-
     </div>
   );
 }
